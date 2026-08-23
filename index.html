@@ -1,82 +1,331 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0a0a0a">
 <title>Rahul Kumar | Atelier OG</title>
+
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
+
 body{
-  margin:0; min-height:100vh; display:flex; justify-content:center; align-items:center;
-  background:#090909; color:#fff; font-family:Arial,Helvetica,sans-serif; padding:20px;
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#090909;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  padding:20px;
 }
+
 .card{
-  width:min(430px,100%); overflow:hidden; border:1px solid #b88a28;
-  border-radius:24px; background:linear-gradient(145deg,#151515,#050505);
-  box-shadow:0 25px 70px #000; position:relative;
+  width:min(430px,100%);
+  overflow:hidden;
+  border:1px solid #b88a28;
+  border-radius:24px;
+  background:linear-gradient(145deg,#151515,#050505);
+  box-shadow:0 25px 70px #000;
+  position:relative;
 }
-.top{padding:28px 24px 18px;text-align:center}
-.logo{width:245px;max-width:82%;height:auto;margin:0 auto 10px;display:block}
-.line{height:1px;background:linear-gradient(90deg,transparent,#c99a35,transparent);margin:8px 0 24px}
-.name{font-size:29px;font-weight:700;margin:0}
-.role{color:#d3a33e;letter-spacing:2px;font-size:12px;margin-top:7px;font-weight:700}.company{color:#aaa;letter-spacing:3px;font-size:12px;margin-top:5px;font-weight:600}
-.tag{color:#aaa;font-size:13px;margin:12px 0 20px}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 20px 22px}
+
+.top{
+  padding:28px 24px 18px;
+  text-align:center;
+}
+
+.logo{
+  width:245px;
+  max-width:82%;
+  height:auto;
+  margin:0 auto 10px;
+  display:block;
+}
+
+.line{
+  height:1px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    #c99a35,
+    transparent
+  );
+  margin:8px 0 24px;
+}
+
+.name{
+  font-size:29px;
+  font-weight:700;
+  margin:0;
+}
+
+.role{
+  color:#d3a33e;
+  letter-spacing:2px;
+  font-size:12px;
+  margin-top:7px;
+  font-weight:700;
+}
+
+.company{
+  color:#aaa;
+  letter-spacing:3px;
+  font-size:12px;
+  margin-top:5px;
+  font-weight:600;
+}
+
+.tag{
+  color:#aaa;
+  font-size:13px;
+  margin:12px 0 20px;
+}
+
+
+/* CLICKABLE ACTION BUTTONS */
+
+.actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  padding:0 20px 22px;
+}
+
 .btn{
-  text-decoration:none;color:#fff;border:1px solid #444;border-radius:12px;
-  padding:13px 10px;font-size:14px;font-weight:600;text-align:center;background:#111;
+  text-decoration:none;
+  color:#fff;
+  border:1px solid #444;
+  border-radius:12px;
+  padding:13px 10px;
+  font-size:14px;
+  font-weight:600;
+  text-align:center;
+  background:#111;
+  transition:0.2s ease;
 }
-.btn.primary{background:#c79732;color:#080808;border-color:#c79732}
-.details{border-top:1px solid #282828;padding:20px}
+
+.btn:hover{
+  border-color:#c79732;
+  transform:translateY(-1px);
+}
+
+.btn.primary{
+  background:#c79732;
+  color:#080808;
+  border-color:#c79732;
+}
+
+
+/* NON-CLICKABLE INFORMATION */
+
+.details{
+  border-top:1px solid #282828;
+  padding:20px;
+}
+
 .detail{
-  display:flex;gap:14px;align-items:center;padding:12px 4px;
-  border-bottom:1px solid #222
+  display:flex;
+  gap:14px;
+  align-items:center;
+  padding:15px 4px;
+  border-bottom:1px solid #222;
 }
-.detail:last-child{border:0}
-.icon{width:34px;text-align:center;color:#d2a03a;font-size:18px}
-.detail a,.detail span{color:#eee;text-decoration:none;font-size:14px;word-break:break-word}
-.services{margin:4px 20px 20px;padding:17px;border-radius:15px;background:#101010;border:1px solid #252525}
-.services h3{margin:0 0 12px;font-size:14px;color:#d2a03a;letter-spacing:1px}
-.services p{margin:0;color:#bbb;font-size:13px;line-height:1.8}
-.footer{text-align:center;padding:18px;color:#777;font-size:11px;letter-spacing:1px;border-top:1px solid #222}
+
+.detail:last-child{
+  border-bottom:none;
+}
+
+.icon{
+  width:34px;
+  min-width:34px;
+  text-align:center;
+  color:#d2a03a;
+  font-size:18px;
+}
+
+.detail span{
+  color:#eee;
+  font-size:14px;
+  word-break:break-word;
+}
+
+
+/* ATELIER OG SUMMARY */
+
+.services{
+  margin:4px 20px 20px;
+  padding:17px;
+  border-radius:15px;
+  background:#101010;
+  border:1px solid #252525;
+}
+
+.services h3{
+  margin:0 0 12px;
+  font-size:14px;
+  color:#d2a03a;
+  letter-spacing:1px;
+}
+
+.services p{
+  margin:0;
+  color:#bbb;
+  font-size:13px;
+  line-height:1.8;
+}
+
+
+/* FOOTER */
+
+.footer{
+  text-align:center;
+  padding:18px;
+  color:#777;
+  font-size:11px;
+  letter-spacing:1px;
+  border-top:1px solid #222;
+}
 </style>
 </head>
+
 <body>
+
 <main class="card">
+
+  <!-- HEADER -->
   <section class="top">
-    <img class="logo" src="logo-transparent.png" alt="Atelier OG">
+
+    <img
+      class="logo"
+      src="logo-transparent.png"
+      alt="Atelier OG"
+    >
+
     <div class="line"></div>
+
     <h1 class="name">Rahul Kumar</h1>
-    <div class="role">FOUNDER</div><div class="company">ATELIER OG</div>
-    <p class="tag">Built around your idea.</p>
+
+    <div class="role">FOUNDER</div>
+
+    <div class="company">ATELIER OG</div>
+
+    <p class="tag">
+      Built around your idea.
+    </p>
+
   </section>
 
+
+  <!-- CLICKABLE ACTION BUTTONS -->
   <section class="actions">
-    <a class="btn primary" href="tel:+918709523430">📞 Call</a>
-    <a class="btn primary" href="https://wa.me/918709523430?text=Hello%20Rahul%2C%20I%27d%20like%20to%20know%20more%20about%20Atelier%20OG%27s%20services." target="_blank">💬 WhatsApp</a>
-    <a class="btn" href="mailto:atelierog.co@gmail.com">✉ Email</a>
-    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Jamshedpur%2C%20Jharkhand" target="_blank">📍 Location</a>
+
+    <a
+      class="btn primary"
+      href="tel:+918709523430"
+    >
+      📞 Call
+    </a>
+
+    <a
+      class="btn primary"
+      href="https://wa.me/918709523430?text=Hello%20Rahul%2C%20I%27d%20like%20to%20know%20more%20about%20Atelier%20OG%27s%20services."
+      target="_blank"
+    >
+      💬 WhatsApp
+    </a>
+
+    <a
+      class="btn"
+      href="mailto:atelierog.co@gmail.com"
+    >
+      ✉ Email
+    </a>
+
+    <a
+      class="btn"
+      href="https://www.google.com/maps/search/?api=1&query=Jamshedpur%2C%20Jharkhand"
+      target="_blank"
+    >
+      📍 Location
+    </a>
+
   </section>
 
+
+  <!-- NON-CLICKABLE INFORMATION -->
   <section class="details">
-    <div class="detail"><div class="icon">📱</div><a href="tel:+918709523430">8709523430</a></div>
-    <div class="detail"><div class="icon">✉</div><a href="mailto:atelierog.co@gmail.com">atelierog.co@gmail.com</a></div>
-    <div class="detail"><div class="icon">📍</div><span>Jamshedpur, Jharkhand</span></div>
-    <div class="detail"><div class="icon">🌐</div><a href="https://atelierog.github.io/atelier-og-card/" target="_blank">Atelier OG Website</a></div>
+
+    <div class="detail">
+      <div class="icon">📱</div>
+      <span>8709523430</span>
+    </div>
+
+    <div class="detail">
+      <div class="icon">✉</div>
+      <span>atelierog.co@gmail.com</span>
+    </div>
+
+    <div class="detail">
+      <div class="icon">📍</div>
+      <span>Jamshedpur, Jharkhand</span>
+    </div>
+
+    <div class="detail">
+      <div class="icon">🌐</div>
+      <span>atelierog.github.io</span>
+    </div>
+
   </section>
 
+
+  <!-- COMPANY SUMMARY -->
   <section class="services">
+
     <h3>ATELIER OG</h3>
-    <p>Turning ideas into professional designs, smarter data, and digital solutions.</p>
+
+    <p>
+      Turning ideas into professional designs,
+      smarter data, and digital solutions.
+    </p>
+
   </section>
 
-  <div class="actions" style="padding-top:0">
-    <a class="btn primary" href="rahul-kumar.vcf" download>＋ Save Contact</a>
-    <a class="btn" href="https://atelierog.github.io/" target="_blank">↗ Visit Website</a>
+
+  <!-- SECONDARY ACTIONS -->
+  <div
+    class="actions"
+    style="padding-top:0"
+  >
+
+    <a
+      class="btn primary"
+      href="rahul-kumar.vcf"
+      download
+    >
+      ＋ Save Contact
+    </a>
+
+    <a
+      class="btn"
+      href="https://atelierog.github.io/atelier-og-card/"
+      target="_blank"
+    >
+      ↗ Visit Website
+    </a>
+
   </div>
 
-  <footer class="footer">DESIGN · DIGITAL · DATA · AUTOMATION</footer>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    DESIGN · DIGITAL · DATA · AUTOMATION
+  </footer>
+
 </main>
+
 </body>
 </html>
